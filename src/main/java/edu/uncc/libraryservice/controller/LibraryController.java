@@ -5,6 +5,7 @@ import edu.uncc.libraryservice.service.BookServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +38,20 @@ public class LibraryController {
     public List<Book> getAllBooks() {
         LOG.info ("Getting all books");
         return bookService.getAllBooks ();
+    }
+
+    /**
+     * Add new book book.
+     *
+     * @param book
+     *         the book
+     *
+     * @return the book
+     */
+    @RequestMapping(value = "/addBook", method = RequestMethod.POST)
+    public Book addNewBook(@RequestBody Book book){
+        LOG.info ("Controller - adding new book");
+        return bookService.addNewBook (book);
     }
 
     /**

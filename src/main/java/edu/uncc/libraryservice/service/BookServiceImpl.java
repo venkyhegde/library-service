@@ -34,4 +34,9 @@ public class BookServiceImpl implements BookService {
         return "Success!";
     }
 
+    @Override public Book addNewBook(Book book) {
+        LOG.info ("book service - adding new book");
+        return bookRepository.save (book);
+    }
+
 }
