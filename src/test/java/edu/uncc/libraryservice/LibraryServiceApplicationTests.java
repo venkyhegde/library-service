@@ -18,5 +18,9 @@ public class LibraryServiceApplicationTests {
     @Test
     public void contextLoads() {
     }
+    
+    @Test
+    public void test(){
+    }
 
 }
